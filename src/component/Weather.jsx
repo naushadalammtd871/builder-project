@@ -44,39 +44,45 @@ const Weather = () => {
                 <img onClick={() => search(inputRef.current.value)} className='py-1.5 px-2 rounded-full bg-[#fff]' src="/Assets/search.png" alt="" />
             </div>
 
-            <div className="sm:mb-10 mb-5 mt-5">
-                {weatherdata.main === "Clouds" ? <img className='w-40' src='/Assets/cloud.png' alt='' /> : ""}
-                {weatherdata.main === "Clear" ? <img className='w-40' src='/Assets/clear.png' alt='' /> : ""}
-                {weatherdata.main === "Rain" ? <img className='w-40' src='/Assets/rain.png' alt='' /> : ""}
-                {weatherdata.main === "Snow" ? <img className='w-40' src='/Assets/snow.png' alt='' /> : ""}
-                {weatherdata.main === "Drizzle" ? <img className='w-40' src='/Assets/drizzle.png' alt='' /> : ""}
-            </div>
-            <div className="flex flex-col items-center justify-center">
-                <div className="mb-5 flex items-center gap-5">
-                    <p className='sm:text-5xl text-2xl font-bold text-[#ffffffd5]'>{weatherdata.temp}°C</p>
-                </div>
-                <p className='sm:text-5xl text-2xl font-bold text-[#ffffffd8]'>{weatherdata.location}</p>
-                <p className='sm:text-4xl w-full mx-auto text-2xl font-bold mt-5 text-center text-[#ffffffce]'>{weatherdata.description}</p>
-            </div>
+            { weatherdata ?
+                <>
 
-            <div className="flex items-center w-full justify-between mt-13 sm:mt-20">
-                <div className="flex items-center gap-5">
-                    <img className='w-6' src="/Assets/humidity.png" alt="" />
-                    <div className="">
-                        <p className='sm:text-2xl text-lg text-[#ffffffcc]'>{weatherdata.humidity} %</p>
-                        <p className='sm:text-2xl text-lg text-[#ffffffcc]'>Humidity</p>
+                <div className="sm:mb-10 mb-5 mt-5">
+                    {weatherdata.main === "Clouds" ? <img className='w-40' src='/Assets/cloud.png' alt='' /> : ""}
+                    {weatherdata.main === "Clear" ? <img className='w-40' src='/Assets/clear.png' alt='' /> : ""}
+                    {weatherdata.main === "Rain" ? <img className='w-40' src='/Assets/rain.png' alt='' /> : ""}
+                    {weatherdata.main === "Snow" ? <img className='w-40' src='/Assets/snow.png' alt='' /> : ""}
+                    {weatherdata.main === "Drizzle" ? <img className='w-40' src='/Assets/drizzle.png' alt='' /> : ""}
+                </div>
+            
+                <div className="flex flex-col items-center justify-center">
+                    <div className="mb-5 flex items-center gap-5">
+                        <p className='sm:text-5xl text-2xl font-bold text-[#ffffffd5]'>{weatherdata.temp}°C</p>
                     </div>
+                    <p className='sm:text-5xl text-2xl font-bold text-[#ffffffd8]'>{weatherdata.location}</p>
+                    <p className='sm:text-4xl w-full mx-auto text-2xl font-bold mt-5 text-center text-[#ffffffce]'>{weatherdata.description}</p>
                 </div>
 
-                <div className="flex items-center gap-5">
-                    <img className='w-6' src="/Assets/wind.png" alt="" />
-                    <div className="">
-                        <p className='sm:text-2xl text-lg text-[#ffffffc5]'>{weatherdata.windSpeed} km/h</p>
-                        <p className='sm:text-2xl text-lg text-[#ffffffd3]'>Wind Speeds</p>
+                <div className="flex items-center w-full justify-between mt-13 sm:mt-20">
+                    <div className="flex items-center gap-5">
+                        <img className='w-6' src="/Assets/humidity.png" alt="" />
+                        <div className="">
+                            <p className='sm:text-2xl text-lg text-[#ffffffcc]'>{weatherdata.humidity} %</p>
+                            <p className='sm:text-2xl text-lg text-[#ffffffcc]'>Humidity</p>
+                        </div>
                     </div>
-                </div>
 
-            </div>
+                    <div className="flex items-center gap-5">
+                        <img className='w-6' src="/Assets/wind.png" alt="" />
+                        <div className="">
+                            <p className='sm:text-2xl text-lg text-[#ffffffc5]'>{weatherdata.windSpeed} km/h</p>
+                            <p className='sm:text-2xl text-lg text-[#ffffffd3]'>Wind Speeds</p>
+                        </div>
+                    </div>
+
+                </div>
+                </> : <></>
+        }
 
         </motion.div>
     </div>
