@@ -33,7 +33,7 @@ const Homer = () => {
 
 
   return (
-    <motion.div initial={{opacity: 0, y: 20}} animate={{opacity: 1, y: 0}} transition={{ duration: 1}} className='flex flex-col items-center justify-center sm:mt-20 mt-12 gap-6'>
+    <motion.div initial={{opacity: 0, y: 20}} animate={{opacity: 1, y: 0}} transition={{ duration: 1}} className='flex flex-col items-center justify-center sm:mt-20 mt-14 gap-6'>
         <div className="h-[120px] w-[120px] rounded-full">
             <img className='hfull w-full object-cover' src="/Assets/cloud.png" alt="" />
         </div>
