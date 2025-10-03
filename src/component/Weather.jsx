@@ -38,7 +38,7 @@ const Weather = () => {
 
   return (
     <div>
-        <motion.div initial={{opacity: 0, y: 20}} animate={{opacity: 1, y: 0}} transition={{ duration: 1 }} className="w-full mx-auto sm:w-2/3 sm:mt-5 mt-50 flex flex-col items-center justify-center py-5 sm:px-10 px-5 bg-[#500ea4]">
+        <motion.div initial={{opacity: 0, y: 20}} animate={{opacity: 1, y: 0}} transition={{ duration: 1 }} className="w-full mx-auto sm:w-2/3 sm:mt-5 mt-7 flex flex-col items-center justify-center py-5 sm:px-10 px-5 bg-[#500ea4]">
             <div className="border flex rounded-full items-center w-full sm:gap-5 gap-3 border-gray-400">
                 <input ref={inputRef} className='w-full outline-[#500ea4] py-1.5 pl-5 bg-violet-200 font-bold rounded-full' type="text" placeholder='Search'/>
                 <img onClick={() => search(inputRef.current.value)} className='py-1.5 px-2 rounded-full bg-[#fff]' src="/Assets/search.png" alt="" />
